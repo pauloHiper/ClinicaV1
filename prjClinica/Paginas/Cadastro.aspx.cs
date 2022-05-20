@@ -89,7 +89,7 @@ namespace prjClinica.Paginas
             if (!valida())
                 return;
 
-            Usuario usuarioNovo = new Usuario(txNome.Text,txUsuario.Text,txSenha.Text, rbADM.Checked ? "A" : "A");
+            Usuario usuarioNovo = new Usuario(txNome.Text,txUsuario.Text,txSenha.Text, rbADM.Checked ? "A" : "B");
 
             clinica.entraUsuario(usuario);
 
@@ -121,7 +121,7 @@ namespace prjClinica.Paginas
 
         protected void btRetorna_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Default.aspx", false);
+            Response.Redirect("~/Default.aspx", false); ;
             return;
         }
     }
