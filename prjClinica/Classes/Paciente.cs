@@ -10,7 +10,7 @@ using System.Web;
 namespace prjClinica.Classes
 {
 
-    public class Paciente : TabelaBase
+    public class Paciente : TabelaBase, IComparable<Paciente>
     {
         private int idPaciente;      
 
@@ -297,6 +297,12 @@ namespace prjClinica.Classes
             {
                 throw;
             }
+        }
+
+  
+        public int CompareTo(Paciente other)
+        {
+            return other.idPaciente - idPaciente;
         }
     }
 }

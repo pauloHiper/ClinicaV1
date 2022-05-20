@@ -7,7 +7,7 @@ using System.Web;
 
 namespace prjClinica.Classes
 {
-    public class Usuario : TabelaBase
+    public class Usuario : TabelaBase, IComparable<Usuario>
     {
        private static string tabela = "Usuario";
        private static string nomeId = "id" + tabela;
@@ -28,8 +28,14 @@ namespace prjClinica.Classes
            this.senha = senha;
            this.perfil = perfil;
        }
-
-       public static Usuario busca(string id, Conexao con)
+        public Usuario()
+        {
+            this.nome =default(String);
+            this.login = default(String); 
+            this.senha = default(String); 
+            this.perfil = default(String); 
+        }
+        public static Usuario busca(string id, Conexao con)
        {
            int iId;
            if (Int32.TryParse(id, out iId))
@@ -131,24 +137,23 @@ namespace prjClinica.Classes
         {
             try
             {
+                String sql = String.Concat("SELECT id", tabela, " FROM ", nomeTabela, " where stAtivo=1 ORDER BY id", tabela);
+
                 List<Usuario> lista = new List<Usuario>();
 
-                String sql = String.Concat("SELECT id", tabela, " FROM " + nomeTabela + " WHERE stAtivo=1");
                 DataTable dt = Conexao.executaSelect(con, sql);
-                DataRow[] linhas = dt.Select();
 
-                foreach (DataRow linha in linhas)
+                if (dt.Rows.Count == 0) return lista;
+
+                DataRow[] ids = dt.Select();
+
+                foreach (DataRow row in ids)
                 {
-                    Usuario u = Usuario.busca(linha[0].ToString(), con);
-                    lista.Add(u);
+                    lista.Add(Usuario.busca(row[0].ToString(), con));
                 }
 
-                if (order == 'n')
-                    return lista.OrderBy(value => value.nome).ToList();
-                else if (order == 'i')
-                    return lista.OrderBy(value => value.idUsuario).ToList();
-                else
-                    return lista;
+
+                return lista;
             }
             catch (Exception)
             {
@@ -156,9 +161,19 @@ namespace prjClinica.Classes
             }
         }
 
+        public static Usuario busca(int id, List<Usuario> lista)
+        {
+            Usuario u = new Usuario();
 
+            u.idUsuario = id;
+            int bus = lista.BinarySearch(u);
+            if(bus >= 0) return lista[bus];
+            return null;
+        }
 
-
-
+        public int CompareTo(Usuario other)
+        {
+            return idUsuario - other.idUsuario;
+        }
     }
 }

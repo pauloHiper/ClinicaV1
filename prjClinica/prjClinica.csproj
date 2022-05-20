@@ -170,6 +170,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Paginas\Cadastro.aspx" />
     <Content Include="Paginas\Login.aspx" />
+    <Content Include="Paginas\Menu.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -294,6 +295,13 @@
     </Compile>
     <Compile Include="Paginas\Cadastro.aspx.designer.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Paginas\Login.aspx.cs">

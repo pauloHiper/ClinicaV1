@@ -168,6 +168,15 @@ namespace prjClinica
         protected global::System.Web.UI.WebControls.Label lbBuscarPeloId;
 
         /// <summary>
+        /// btExclui control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btExclui;
+
+        /// <summary>
         /// btOk control.
         /// </summary>
         /// <remarks>
@@ -213,15 +222,6 @@ namespace prjClinica
         protected global::System.Web.UI.WebControls.Button btBuscarPeloId;
 
         /// <summary>
-        /// btCadastrar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btCadastrar;
-
-        /// <summary>
         /// btEdita control.
         /// </summary>
         /// <remarks>
@@ -229,15 +229,6 @@ namespace prjClinica
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btEdita;
-
-        /// <summary>
-        /// btExclui control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btExclui;
 
         /// <summary>
         /// rbOrderName control.

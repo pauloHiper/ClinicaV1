@@ -29,7 +29,7 @@ namespace prjClinica.Paginas
                 if(u != null)
                 {
                     Session["usuario"] = u;
-                    Response.Redirect("~/Default.aspx", false);
+                    Response.Redirect(u.perfil.Contains("a") ? "~/Paginas/Menu.aspx" : "~/Default.aspx", false);
                     return;
                 }
                 else

@@ -58,13 +58,14 @@
                     <td>
                         <asp:Label ID="lbBuscarPeloId" runat="server"  />
                     </td>
-                    <TD>
+                    <TD style="width: 16px">
                         &nbsp;
                     </TD>
-                    <TD>
+                    <TD style="width: 200px">
                         &nbsp;
+                    <asp:Button ID="btExclui" runat="server" Text="Exclui" Width="162px" visible="false" OnClick="btExclui_Click" />
                     </TD>
-                    <TD>
+                    <TD style="width: 210px">
                         &nbsp;
                     </TD>
                 </tr>
@@ -82,15 +83,13 @@
                         <asp:TextBox ID="buscarPeloId" runat="server" Width="50px"></asp:TextBox>
                         <asp:Button ID="btBuscarPeloId" runat="server" Text="OK" Width="40px" OnClick="btBuscarPeloId_Click"  />
                     </td>
-                    <TD style="width:80px">
-                        &nbsp;&nbsp;&nbsp;<asp:Button ID="btCadastrar" runat="server" Text="Cadastrar Usuário" Width="162px" OnClick="btCadastrar_Click"/>
-                    &nbsp;</TD>
-                    <td style="width:100px; margin-left: 80px;">
-                        &nbsp;&nbsp;<asp:Button ID="btEdita" runat="server" Text="Edita" Width="70px" visible="false" OnClick="btEdita_Click"/>
+                    <TD style="width:16px">
+                        &nbsp;&nbsp;&nbsp;&nbsp;</TD>
+                    <td style="width:200px; margin-left: 80px;">
+                        &nbsp;&nbsp;<asp:Button ID="btEdita" runat="server" Text="Edita" Width="162px" visible="false" OnClick="btEdita_Click"/>
                     </td>
-                    <td style="width:100px">
-                        &nbsp;&nbsp;<asp:Button ID="btExclui" runat="server" Text="Exclui" Width="70px" visible="false" OnClick="btExclui_Click" />
-                    </td>
+                    <td style="width:210px">
+                        &nbsp;&nbsp;</td>
                 </tr>
             </table>
         </li>

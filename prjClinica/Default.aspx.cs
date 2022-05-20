@@ -37,7 +37,7 @@ namespace prjClinica
                     using (Conexao con = new Conexao(usuario))
                     {
                         con.open();
-                        clinica = new Clinica("Clínica de estética Corporal do Santa Cecilia", con);
+                        clinica = new Clinica("Clínica de estética Paulo Galvao da Silva", con);
                     }
                     txRelatorio.Text = clinica.relatorio();
 
@@ -333,12 +333,6 @@ namespace prjClinica
         {
             Session["usuario"] = null;
             Response.Redirect("~/Paginas/Login.aspx", false);
-            return;
-        }
-
-        protected void btCadastrar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Paginas/Cadastro.aspx");
             return;
         }
     }
